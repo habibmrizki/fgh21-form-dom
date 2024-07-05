@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Form -->
+    <form id="form-survey" onsubmit="click(event)" style="margin-bottom: 30px">
+      <div>
+        <label for="fname">siapa nama anda</label>
+        <div>
+          <input type="text" id="fname" />
+        </div>
+      </div>
+      <div>
+        <label for="age">berapa umur anda</label>
+      </div>
+      <div>
+        <input type="text" id="age" />
+      </div>
+      <div>
+        <div>apa jenis kelamin anda</div>
+        <div>
+          <input type="radio" id="male" name="gender" />
+          <label for="male">Laki-laki</label>
+        </div>
+        <div>
+          <input type="radio" id="female" name="gender" />
+          <label for="female">Perempuan</label>
+        </div>
+      </div>
+      <div>
+        <div>apa anda merokok</div>
+        <div>
+          <input type="radio" id="smoke1" name="smoke" />
+          <label for="smoke1">Yes</label>
+        </div>
+        <div>
+          <input type="radio" id="smoke2" name="smoke" />
+          <label for="smoke2">No</label>
+        </div>
+      </div>
+      <div>
+        <div>Jika ada perokok, jenis rokok apa yang anda pakai</div>
+        <div>
+          <input type="checkbox" id="smoker1" name="smoker" />
+          <label for="smoker1">Gudang Garam Filter</label>
+        </div>
+        <div>
+          <input type="checkbox" id="smoker2" name="smoker" />
+          <label for="smoker2">Lucky Strike</label>
+        </div>
+        <div>
+          <input type="checkbox" id="smoker3" name="smoker" />
+          <label for="smoker3">Malboro</label>
+        </div>
+        <div>
+          <input type="checkbox" id="smoker4" name="smoker" />
+          <label for="smoker4">Esse</label>
+        </div>
+      </div>
+      <button type="button" id="btn">Send</button>
+    </form>
+
+    <!-- Table -->
+    <table id="table" border="1" style="border-collapse: collapse">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Age</th>
+          <th>Gender</th>
+          <th>Is respondent smoker?</th>
+          <th>cigar variant that respondent have try</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>admin</td>
+          <td>22</td>
+          <td>laki-laki</td>
+          <td>ya</td>
+          <td>gudang garam filter, malboro</td>
+        </tr>
+      </tbody>
+    </table>
+    <script src="script.js"></script>
+  </body>
+</html>
