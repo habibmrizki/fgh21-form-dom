@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <!-- Form -->
@@ -18,46 +20,56 @@
         <label for="age">berapa umur anda</label>
       </div>
       <div>
-        <input type="text" id="age" />
+        <input type="number" id="age" />
       </div>
       <div>
         <div>apa jenis kelamin anda</div>
         <div>
-          <input type="radio" id="male" name="gender" />
+          <input type="radio" id="male" name="gender" value="Laki-laki" />
           <label for="male">Laki-laki</label>
         </div>
         <div>
-          <input type="radio" id="female" name="gender" />
+          <input type="radio" id="female" name="gender" value="Perempuan" />
           <label for="female">Perempuan</label>
         </div>
       </div>
       <div>
         <div>apa anda merokok</div>
         <div>
-          <input type="radio" id="smoke1" name="smoke" />
+          <input type="radio" id="smoke1" name="smoke" value="Yes" />
           <label for="smoke1">Yes</label>
         </div>
         <div>
-          <input type="radio" id="smoke2" name="smoke" />
+          <input type="radio" id="smoke2" name="smoke" value="No" />
           <label for="smoke2">No</label>
         </div>
       </div>
       <div>
         <div>Jika ada perokok, jenis rokok apa yang anda pakai</div>
         <div>
-          <input type="checkbox" id="smoker1" name="smoker" />
+          <input
+            type="checkbox"
+            id="smoker1"
+            name="smoker"
+            value="Gudang Garam Filter"
+          />
           <label for="smoker1">Gudang Garam Filter</label>
         </div>
         <div>
-          <input type="checkbox" id="smoker2" name="smoker" />
+          <input
+            type="checkbox"
+            id="smoker2"
+            name="smoker"
+            value="Lucky Strike"
+          />
           <label for="smoker2">Lucky Strike</label>
         </div>
         <div>
-          <input type="checkbox" id="smoker3" name="smoker" />
+          <input type="checkbox" id="smoker3" name="smoker" value="Malboro" />
           <label for="smoker3">Malboro</label>
         </div>
         <div>
-          <input type="checkbox" id="smoker4" name="smoker" />
+          <input type="checkbox" id="smoker4" name="smoker" value="Esse" />
           <label for="smoker4">Esse</label>
         </div>
       </div>
@@ -75,15 +87,7 @@
           <th>cigar variant that respondent have try</th>
         </tr>
       </thead>
-      <tbody>
-        <tr>
-          <td>admin</td>
-          <td>22</td>
-          <td>laki-laki</td>
-          <td>ya</td>
-          <td>gudang garam filter, malboro</td>
-        </tr>
-      </tbody>
+      <tbody id="tbody"></tbody>
     </table>
     <script src="script.js"></script>
   </body>

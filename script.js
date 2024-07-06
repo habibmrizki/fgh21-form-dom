@@ -133,19 +133,98 @@
 // formSurvey.appendChild(smoker2);
 // formSurvey.appendChild(smoker3);
 // formSurvey.appendChild(smoker4);
+const form = document.getElementById("form-survey");
 
 const btn = document.getElementById("btn");
-btn.addEventListener("click", function (e) {
+btn.addEventListener("click", proccessData);
+
+const tableBody = document.getElementById("tbody");
+
+function proccessData(e) {
   e.preventDefault();
-  const fname = e.target.getElementById("fname").value;
-  const age = e.target.getElementById("age").value;
-  const male = e.target.getElementById("male").value;
-  const female = e.target.getElementById("female").value;
-  const smoke1 = e.target.getElementById("smoke1").value;
-  const smoke2 = e.target.getElementById("smoke2").value;
-  const smoker1 = e.target.getElementById("smoker1").value;
-  const smoker2 = e.target.getElementById("smoker2").value;
-  const smoker3 = e.target.getElementById("smoker3").value;
-  const smoker4 = e.target.getElementById("smoker4").value;
-  console.log();
-});
+
+  const tableR = document.createElement("tr");
+  const tableName = document.createElement("td");
+  const tableAge = document.createElement("td");
+  const tableGender = document.createElement("td");
+  const tableSmoke = document.createElement("td");
+  const tableSmoker = document.createElement("td");
+
+  // Name
+  const fname = document.getElementById("fname");
+  const nameValue = fname.value;
+  tableName.textContent = nameValue;
+
+  // age
+  const age = document.getElementById("age");
+  const ageValue = age.value;
+  tableAge.textContent = ageValue;
+  // gender
+  const male = document.getElementById("male").checked;
+  const female = document.getElementById("female").checked;
+
+  if (male === true) {
+    const male = document.getElementById("male");
+    const maleValue = male.value;
+    tableGender.textContent = maleValue;
+  }
+
+  if (female === true) {
+    const female = document.getElementById("female");
+    const femaleValue = female.value;
+    tableGender.textContent = femaleValue;
+  }
+
+  // smoke
+  const smoke1 = document.getElementById("smoke1").checked;
+  const smoke2 = document.getElementById("smoke2").checked;
+
+  if (smoke1 === true) {
+    const smoke1 = document.getElementById("smoke1");
+    const smoke1Value = smoke1.value;
+    tableSmoke.textContent = smoke1Value;
+  }
+
+  if (smoke2 === true) {
+    const smoke2 = document.getElementById("smoke2");
+    const smoke2Value = smoke2.value;
+    tableSmoke.textContent = smoke2Value;
+  }
+
+  // smoker
+  const smoker1 = document.getElementById("smoker1").checked;
+  const smoker2 = document.getElementById("smoker2").checked;
+  const smoker3 = document.getElementById("smoker3").checked;
+  const smoker4 = document.getElementById("smoker4").checked;
+
+  if (smoker1 === true) {
+    const smoker1 = document.getElementById("smoker1");
+    const smoker1Value = smoker1.value;
+    tableSmoker.textContent = smoker1Value;
+  }
+
+  if (smoker2 === true) {
+    const smoker2 = document.getElementById("smoker2");
+    const smoker2Value = smoker2.value;
+    tableSmoke.textContent = smoker2Value;
+  }
+
+  if (smoker3 === true) {
+    const smoker3 = document.getElementById("smoker3");
+    const smoker3Value = smoker3.value;
+    tableSmoke.textContent = smoker3Value;
+  }
+
+  if (smoker4 === true) {
+    const smoke4 = document.getElementById("smoker4");
+    const smoke4Value = smoke4.value;
+    tableSmoke.textContent += smoke4Value;
+  }
+
+  tableR.appendChild(tableName);
+  tableR.appendChild(tableAge);
+  tableR.appendChild(tableGender);
+  tableR.appendChild(tableSmoke);
+  tableR.appendChild(tableSmoker);
+  tableBody.appendChild(tableR);
+}
