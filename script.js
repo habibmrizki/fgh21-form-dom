@@ -155,6 +155,11 @@ function proccessData(e) {
   const nameValue = fname.value;
   tableName.textContent = nameValue;
 
+  if (nameValue === "") {
+    window.alert("tidak boleh kosong");
+    return;
+  }
+
   // age
   const age = document.getElementById("age");
   const ageValue = age.value;
@@ -191,40 +196,45 @@ function proccessData(e) {
     tableSmoke.textContent = smoke2Value;
   }
 
-  // smoker
-  const smoker1 = document.getElementById("smoker1").checked;
-  const smoker2 = document.getElementById("smoker2").checked;
-  const smoker3 = document.getElementById("smoker3").checked;
-  const smoker4 = document.getElementById("smoker4").checked;
+  // smoker;
+  const smoker1 = document.getElementById("gudang-garam-filter").checked;
+  const smoker2 = document.getElementById("lucky-strike").checked;
+  const smoker3 = document.getElementById("malboro").checked;
+  const smoker4 = document.getElementById("esse").checked;
+
+  let cigarVarian = "";
 
   if (smoker1 === true) {
-    const smoker1 = document.getElementById("smoker1");
+    const smoker1 = document.getElementById("gudang-garam-filter");
     const smoker1Value = smoker1.value;
-    tableSmoker.textContent = smoker1Value;
+    cigarVarian += smoker1Value + "; ";
   }
 
   if (smoker2 === true) {
-    const smoker2 = document.getElementById("smoker2");
+    const smoker2 = document.getElementById("lucky-strike");
     const smoker2Value = smoker2.value;
-    tableSmoke.textContent = smoker2Value;
+    cigarVarian += smoker2Value + "; ";
   }
 
   if (smoker3 === true) {
-    const smoker3 = document.getElementById("smoker3");
+    const smoker3 = document.getElementById("malboro");
     const smoker3Value = smoker3.value;
-    tableSmoke.textContent = smoker3Value;
+    cigarVarian += smoker3Value + "; ";
   }
 
   if (smoker4 === true) {
-    const smoke4 = document.getElementById("smoker4");
-    const smoke4Value = smoke4.value;
-    tableSmoke.textContent += smoke4Value;
+    const smoker4 = document.getElementById("esse");
+    const smoker4Value = smoker4.value;
+    cigarVarian += smoker4Value + "; ";
   }
 
+  tableSmoker.textContent = cigarVarian;
   tableR.appendChild(tableName);
   tableR.appendChild(tableAge);
   tableR.appendChild(tableGender);
   tableR.appendChild(tableSmoke);
   tableR.appendChild(tableSmoker);
+
   tableBody.appendChild(tableR);
+  form.reset();
 }
